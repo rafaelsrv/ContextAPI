@@ -6,7 +6,7 @@ import './index.css'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 
 import Home from './routes/Home'
-import Contact from './routes/Home'
+import Contact from './routes/Contact'
 
 const router = createBrowserRouter([
   {
@@ -19,8 +19,12 @@ const router = createBrowserRouter([
   },
 ])
 
+import { ThemeProvider } from './context/ThemeContext'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <ThemeProvider>
     <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>,
 )
